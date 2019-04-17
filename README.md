@@ -1,2 +1,2 @@
 # common-compute
-npm包-常用的JS计算
+npm插件包-常用的JS计算
