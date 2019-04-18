@@ -1,6 +1,6 @@
 {
   "name": "common-compute",
-  "version": "1.0.6",
+  "version": "1.0.21",
   "description": "常用的JS计算",
   "main": "index.js",
   "scripts": {
