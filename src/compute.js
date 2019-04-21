@@ -15,7 +15,7 @@ const compute = {
 		}
 
 	},
-	/* 减运算，避免数据相除小数点后产生多位数和计算精度损失。*/
+	/* 相减运算，避免数据相除小数点后产生多位数和计算精度损失。*/
 	subtractNumber(...values) {
 		if(values instanceof Array){
 			let difference = 0; // 差
@@ -30,7 +30,7 @@ const compute = {
 			};
 		}
 	},
-	/* 乘运算，避免数据相除小数点后产生多位数和计算精度损失。*/
+	/* 相乘运算，避免数据相除小数点后产生多位数和计算精度损失。*/
 	subNumber(...values) {
 		if(values instanceof Array){
 			let product = 0; // 积
@@ -45,7 +45,7 @@ const compute = {
 			};
 		}
 	},
-	/* 除运算，避免数据相除小数点后产生多位数和计算精度损失。*/
+	/* 相除运算，避免数据相除小数点后产生多位数和计算精度损失。*/
 	divideNumber(...values) {
 		if(values instanceof Array){
 			let quotient = 0; // 商
@@ -62,36 +62,22 @@ const compute = {
 	},
 	// 把值转换成整数
 	parseInt(value) {
-		let resultType = typeof value;
-		if(resultType == 'number'){
-			return parseInt(value);
-		}else{
-			return {
-				message: '传入的数据类型错误'
-			};
-		}
+		return parseInt(value);
 	},
 	// 把值转换成浮点数
 	parseFloat(value) {
-		let resultType = typeof value;
-		if(resultType == 'number'){
-			return parseInt(value)
-		}else{
-			return {
-				message: '传入的数据类型错误'
-			};
-		}
+		return parseFloat(value)
 	},
 	// 强制类型转换-把给定的值转换成Boolean型
-	Boolean(value) {
+	boolean(value) {
 		return Boolean(value)
 	},
 	// 强制类型转换-把给定的值转换成数字（可以是整数或浮点数）
-	Number(value) {
+	number(value) {
 		return Number(value)
 	},
 	// 强制类型转换-把给定的值转换成字符串
-	String(value) {
+	string(value) {
 		return String(value)
 	},
 	// 向上取整
@@ -147,18 +133,18 @@ const compute = {
 			};
 		}
 	},
-	// 四舍五入,保留几位小数
-	toFixed(value) {
-		let resultType = typeof value;
+	// 四舍五入,保留n位小数
+	toFixed(n) {
+		let resultType = typeof n;
 		if(resultType == 'number'){
-			return Math.toFixed(value);
+			return Math.toFixed(n);
 		}else{
 			return {
 				message: '传入的数据类型错误'
 			};
 		}
 	},
-	// 不四舍五入,保留几位小数
+	// 不四舍五入,保留n位小数
 	decimal(value, n) {
 		let resultTypeValue = typeof value;
 		let resultTypeNum = typeof n;
@@ -173,6 +159,5 @@ const compute = {
 }
 
 export default compute;
-
 
 
